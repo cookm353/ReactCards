@@ -1,7 +1,7 @@
 import { useState } from "react"
 
-const useFlip = () => {
-    const [ isFacingUp, setIsFacingUp ] = useState()
+const useFlip = (initialVal = false) => {
+    const [ isFacingUp, setIsFacingUp ] = useState(initialVal)
 
     const flip = () => {
         setIsFacingUp(isUp => !isUp)
