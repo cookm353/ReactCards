@@ -3,11 +3,10 @@ import uuid from "uuid"
 import axios from "axios"
 
 /* Hook to make an AJAX request using Axios */
-const useAxios = () => {
+const useAxios = (url) => {
     const [ cards, setCards ] = useState([])
 
-    const addCard = async (url="https://deckofcardsapi.com/api/deck/new/draw/") => {        
-        console.log(url)
+    const addCard = async () => {
         const response = await axios.get(url)
         setCards(cards => [...cards, { ...response.data, id: uuid() }]);
     }
